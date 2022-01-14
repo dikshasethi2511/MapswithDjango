@@ -8,6 +8,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .models import Search
 from .forms import SearchForm
+from django.http import HttpResponse
 import folium
 import geocoder
 
@@ -30,6 +31,13 @@ def index(request):
     longitude = location.lng
     latitude = location.lat
     countryName = location.country
+
+    #Checking for gibberish entry
+    if latitude == None or longitude == None:
+        #Deleting last entry
+        address_location.delete()
+        return HttpResponse('You have entered an incorrect location!')
+
     #Creating a map object
     mapObject = folium.Map(location=[19,-12], zoom_start=2)
 
