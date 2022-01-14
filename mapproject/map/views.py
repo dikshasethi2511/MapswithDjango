@@ -6,19 +6,21 @@ from django.shortcuts import render
 # Takes web request -> returns web response
 
 from django.shortcuts import render
+from .models import Search
 import folium
 import geocoder
 
 def index(request):
     #Getting the location
-    #address_location = request.POST.get('address_location')
-    location = geocoder.osm('Paris')
+    #Getting last object from the database
+    address_location = Search.objects.all().last()
+    location = geocoder.osm(address_location)
     longitude = location.lng
     latitude = location.lat
     countryName = location.country
     #Creating a map object
     mapObject = folium.Map(location=[19,-12], zoom_start=2)
-    folium.Marker([5.594, -0.219], tooltip='More for information!', popup='Ghana').add_to(mapObject)
+
     folium.Marker([latitude, longitude], tooltip='More for information!', popup=countryName).add_to(mapObject)
     #Converting to HTML representation
     mapObject = mapObject._repr_html_()
