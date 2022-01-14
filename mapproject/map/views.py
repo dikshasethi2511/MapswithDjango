@@ -11,7 +11,8 @@ import geocoder
 
 def index(request):
     #Getting the location
-    location = geocoder.osm('UK')
+    #address_location = request.POST.get('address_location')
+    location = geocoder.osm('Paris')
     longitude = location.lng
     latitude = location.lat
     countryName = location.country
