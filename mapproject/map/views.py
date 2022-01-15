@@ -41,7 +41,7 @@ def index(request):
     #Creating a map object
     mapObject = folium.Map(location=[19,-12], zoom_start=2)
 
-    folium.Marker([latitude, longitude], tooltip='More for information!', popup=countryName).add_to(mapObject)
+    folium.Marker([latitude, longitude], tooltip='Check out the country!', popup=countryName).add_to(mapObject)
     #Converting to HTML representation
     mapObject = mapObject._repr_html_()
     context = { 'mapObject' : mapObject, 'form' : form}
