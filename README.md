@@ -31,7 +31,7 @@ about them.
 
 ### Overview
 
-<img src="/assets/Searching.png" alt="Searching for location" style="height: 250px; width:500px;"/>\
+<img src="/assets/Searching.png" alt="Searching for location" style="height: 250px; width:500px;"/>
 
 <img src="/assets/SearchResult.png" alt="Search Result" style="height: 250px; width:500px;"/>
 
