@@ -18,8 +18,8 @@ about them.
 
 ### Features
 
-- Marks the searched location (city, country, etc) on the map
-- Gives a label of the country where the place is situated in the language of that country
+- Marks the searched location (city, country, etc) on the map using longitude and latitude coordinates
+- Finds the country where the place is situated and displays it on a label in the language of that country
 - Redirects to error page upon searching for an incorrect location
 
 ### Currently working on
